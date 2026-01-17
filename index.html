@@ -38,6 +38,26 @@
             align-items: center;
             padding: 0 20px;
         }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        nav ul {
+            display: flex;
+        }
         nav h1 {
             font-size: 1.5rem;
             font-weight: 600;
@@ -525,19 +545,81 @@
             transform: scale(1.1);
             box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-            nav ul {
-                margin-top: 20px;
-            }
-            nav ul li {
-                margin-left: 0;
-                margin: 0 15px;
+        @media (max-width: 1024px) {
+            #hero {
+                padding: 120px 20px 80px;
             }
             #hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            #hero p {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 80px 20px 50px;
+            }
+            #about, #skills, #projects, #contact {
+                padding: 40px;
+            }
+            .timeline {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #0B1F3B;
+                padding: 20px 0;
+                margin: 0;
+                z-index: 99;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 10px 20px;
+                display: block;
+            }
+            .hamburger-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            #hero {
+                padding: 100px 20px 60px;
+                margin: 10px;
+            }
+            #hero h2 {
+                font-size: 2.2rem;
+            }
+            #hero p {
+                font-size: 1.1rem;
+            }
+            section {
+                padding: 60px 15px 40px;
+            }
+            #about, #skills, #projects, #contact {
+                padding: 30px 20px;
+                margin-bottom: 20px;
+            }
+            #about h2, #skills h2, #projects h2, #contact h2 {
+                font-size: 2rem;
             }
             #about .content {
                 flex-direction: column;
@@ -547,11 +629,179 @@
                 margin-right: 0;
                 margin-bottom: 30px;
             }
+            #about .photo img {
+                width: 180px;
+                height: 220px;
+            }
             #skills ul {
                 grid-template-columns: 1fr;
             }
             .project img {
-                height: 200px;
+                height: 180px;
+            }
+            .project h3 {
+                font-size: 1.3rem;
+            }
+            .timeline {
+                max-width: 100%;
+            }
+            .timeline::after {
+                left: 20px;
+                margin-left: 0;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                padding: 10px 40px 10px 60px;
+            }
+            .timeline-item::after {
+                left: 3px;
+                right: auto;
+            }
+            .timeline-item.right::after {
+                left: 3px;
+            }
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .testimonial {
+                padding: 20px;
+            }
+            .testimonial .quote {
+                font-size: 1.1rem;
+            }
+            .whatsapp-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 90px;
+                right: 20px;
+            }
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            footer {
+                padding: 20px;
+            }
+            .social-icons {
+                gap: 15px;
+            }
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav h1 {
+                font-size: 1.3rem;
+            }
+            #hero h2 {
+                font-size: 1.8rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+            #hero .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            section {
+                padding: 50px 10px 30px;
+            }
+            #about, #skills, #projects, #contact {
+                padding: 20px 15px;
+            }
+            #about h2, #skills h2, #projects h2, #contact h2 {
+                font-size: 1.8rem;
+            }
+            #about .photo img {
+                width: 150px;
+                height: 180px;
+            }
+            .project img {
+                height: 150px;
+            }
+            .project h3 {
+                font-size: 1.2rem;
+            }
+            .project .project-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .timeline-item {
+                padding: 10px 20px 10px 50px;
+            }
+            .timeline-content {
+                padding: 15px 20px;
+            }
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            .testimonial {
+                padding: 15px;
+            }
+            .testimonial .quote {
+                font-size: 1rem;
+            }
+            .download-cv a {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+            .view-all-projects a {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+            .whatsapp-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 20px;
+                bottom: 15px;
+                right: 15px;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 80px;
+                right: 15px;
+            }
+            .dark-mode-toggle {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            footer {
+                padding: 15px;
+            }
+            .social-icons {
+                gap: 10px;
+            }
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            form input, form textarea {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            form button {
+                padding: 12px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -560,7 +810,12 @@
     <header>
         <nav>
             <h1>Ridwan Ibrahim</h1>
-            <ul>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -849,6 +1104,23 @@ My core strengths include data visualization, exploratory data analysis, and sta
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
+        });
+
+        // Hamburger menu toggle
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            });
         });
     </script>
 </body>
