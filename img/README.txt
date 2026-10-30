@@ -1,0 +1,1 @@
+Put your project screenshots here, named exactly as in script.js: Sales_Analysis_Dashboard.jpg, Healthcare_Analysis.jpg, Hr_analytics.jpg, Python_Analytics.png. Copy them from the img folder of your old site.
